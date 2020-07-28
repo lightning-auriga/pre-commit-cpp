@@ -1,7 +1,17 @@
 # pre-commit-cpp
 
+[![pipeline status](https://gitlab.com/daverona//pre-commit-cpp/badges/master/pipeline.svg)](https://gitlab.com/daverona/pre-commit-cpp/-/commits/master)
+
 This is a set of git [pre-commit framework](https://pre-commit.com/) hooks for
-C/C++ language. The hooks provided are:
+C/C++ language. 
+
+* GitLab repository: [https://gitlab.com/daverona/templates/laravel](https://gitlab.com/daverona/templates/laravel)
+* Docker registry: [https://hub.docker.com/r/daverona/pre-commit-cpp](https://hub.docker.com/r/daverona/pre-commit-cpp)
+* Available releases: [https://gitlab.com/daverona/pre-commit-cpp/-/releases](https://gitlab.com/daverona/pre-commit-cpp/-/releases)
+
+## Overview
+
+The hooks provided are:
 
 * [clang-format](https://clang.llvm.org): formatter of C/C++ code based on a
 style guide: LLVM, Google, Chromium, Mozilla, and WebKit available
