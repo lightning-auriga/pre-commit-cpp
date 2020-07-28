@@ -1,0 +1,48 @@
+stages:
+  - build draft
+  - build final
+  - silly
+
+build draft:
+  stage: build draft
+  only:
+    changes:
+      - Dockerfile
+  image: docker:19.03.8
+  services:
+    - docker:19.03.8-dind
+  script:
+    - docker login --username gitlab-ci-token --password $CI_JOB_TOKEN $CI_REGISTRY
+    - docker image pull $CI_REGISTRY_IMAGE:master || true
+    - >
+      docker image build
+      --pull
+      --cache-from $CI_REGISTRY_IMAGE:master
+      --tag $CI_REGISTRY_IMAGE:master
+      .
+    - docker image push $CI_REGISTRY_IMAGE:master
+    - docker logout $CI_REGISTRY
+
+build final:
+  stage: build final
+  only:
+    refs:
+      - tags
+    changes:
+      - Dockerfile
+  image: docker:19.03.8
+  services:
+    - docker:19.03.8-dind
+  script:
+    - docker login --username gitlab-ci-token --password $CI_JOB_TOKEN $CI_REGISTRY
+    - docker image pull $CI_REGISTRY_IMAGE:master
+    - docker image tag $CI_REGISTRY_IMAGE:master $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    - docker image tag $CI_REGISTRY_IMAGE:master $CI_REGISTRY_IMAGE:latest
+    - docker image push $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    - docker image push $CI_REGISTRY_IMAGE:latest
+    - docker logout $CI_REGISTRY
+
+silly:
+  stage: silly
+  script:
+    - echo "You silly."
