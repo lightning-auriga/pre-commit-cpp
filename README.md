@@ -91,3 +91,4 @@ Available styles are `LLVM`, `Google`, `Chromium`, `Mozilla`, and `WebKit`.
 * [Chromium C++ Style Guide](https://chromium.googlesource.com/chromium/src/+/master/styleguide/c++/c++.md)
 * [Mozilla Coding Style Guide](https://www-archive.mozilla.org/hacking/mozilla-style-guide.html)
 * [WebKit Code Style Guidelines](https://webkit.org/code-style-guidelines/)
+
