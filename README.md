@@ -1,4 +1,4 @@
-# pre-commit-cpp
+# daverona/pre-commit-cpp
 
 [![pipeline status](https://gitlab.com/daverona//pre-commit-cpp/badges/master/pipeline.svg)](https://gitlab.com/daverona/pre-commit-cpp/-/commits/master)
 
@@ -75,20 +75,18 @@ please add `args` to the hook to override the default style:
 
 Available styles are `LLVM`, `Google`, `Chromium`, `Mozilla`, and `WebKit`.
 
-
 ## References
 
-* [pre-commit framework](https://pre-commit.com/)
-* [pre-commit supported hooks](https://pre-commit.com/hooks.html)
-* [https://github.com/caramelomartins/awesome-linters#cc](https://github.com/caramelomartins/awesome-linters#cc)
-* [clang-format homepage](https://clang.llvm.org/docs/ClangFormat.html) and
-[clang-format man page](http://manpages.ubuntu.com/manpages/xenial/en/man1/clang-format-3.5.1.html)
-* [cpplint homepage](https://github.com/cpplint/cpplint)
-* [cppcheck homepage](http://cppcheck.sourceforge.net/) and
-[cppcheck man page](http://www.polarhome.com/service/man/?qf=cppcheck&tf=2&of=Ubuntu&sf=1)
-* [LLVM Coding Standards](http://llvm.org/docs/CodingStandards.html)
-* [Google C++ Style Guide](http://google.github.io/styleguide/cppguide.html)
-* [Chromium C++ Style Guide](https://chromium.googlesource.com/chromium/src/+/master/styleguide/c++/c++.md)
-* [Mozilla Coding Style Guide](https://www-archive.mozilla.org/hacking/mozilla-style-guide.html)
-* [WebKit Code Style Guidelines](https://webkit.org/code-style-guidelines/)
-
+* pre-commit framework: [https://pre-commit.com/](https://pre-commit.com/)
+* pre-commit supported hooks: [https://pre-commit.com/hooks.html](https://pre-commit.com/hooks.html)
+* caramelomartins/awesome-linters: [https://github.com/caramelomartins/awesome-linters#cc](https://github.com/caramelomartins/awesome-linters#cc)
+* clang-format homepage: [https://clang.llvm.org/docs/ClangFormat.html](https://clang.llvm.org/docs/ClangFormat.html) 
+* clang-format man: [http://manpages.ubuntu.com/manpages/xenial/en/man1/clang-format-3.5.1.html](http://manpages.ubuntu.com/manpages/xenial/en/man1/clang-format-3.5.1.html)
+* cpplint homepage: [https://github.com/cpplint/cpplint](https://github.com/cpplint/cpplint)
+* cppcheck homepage: [http://cppcheck.sourceforge.net/](http://cppcheck.sourceforge.net/)
+* cppcheck man: [http://www.polarhome.com/service/man/?qf=cppcheck&tf=2&of=Ubuntu&sf=1](http://www.polarhome.com/service/man/?qf=cppcheck&tf=2&of=Ubuntu&sf=1)
+* LLVM Coding Standards: [http://llvm.org/docs/CodingStandards.html](http://llvm.org/docs/CodingStandards.html)
+* Google C++ Style Guide: [http://google.github.io/styleguide/cppguide.html](http://google.github.io/styleguide/cppguide.html)
+* Chromium C++ Style Guide: [https://chromium.googlesource.com/chromium/src/+/master/styleguide/c++/c++.md](https://chromium.googlesource.com/chromium/src/+/master/styleguide/c++/c++.md)
+* Mozilla Coding Style Guide: [https://www-archive.mozilla.org/hacking/mozilla-style-guide.html](https://www-archive.mozilla.org/hacking/mozilla-style-guide.html)
+* WebKit Code Style Guidelines: [https://webkit.org/code-style-guidelines/](https://webkit.org/code-style-guidelines/)
