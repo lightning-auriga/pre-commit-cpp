@@ -2,9 +2,7 @@ from setuptools import setup
 
 
 setup(
-    name='pre_commit_dummy_package',
+    name='dummy-pre-commit-cpp',
     version='0.0.0',
-    install_requires=[
-        'cpplint>=1.4.4',
-    ],
+    install_requires=['cpplint', ],
 )
