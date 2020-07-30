@@ -1,5 +1,5 @@
 - id: clang-format
-  name: formatter for C/C++ code
+  name: clang-format
   description: Run clang-format against C/C++ header and source files
   language: system
   files: \.(h\+\+|h|hh|hxx|hpp|cuh|c|cc|cpp|cu|c\+\+|cxx|tpp|txx)$
@@ -7,21 +7,21 @@
   args: ["-style=Google"]
 
 - id: cpplint
-  name: linter for Google C++ Style Guide
+  name: cpplint
   description: Run cpplint against C/C++ header and source files
   language: python
   files: \.(h\+\+|h|hh|hxx|hpp|cuh|c|cc|cpp|cu|c\+\+|cxx|tpp|txx)$
   entry: cpplint
 
 - id: cppcheck
-  name: static analyzer for C/C++ code
+  name: cppcheck
   description: Run cppcheck against C/C++ source files
   language: system
   files: \.(c|cc|cpp|cu|c\+\+|cxx|tpp|txx)$
   entry: cppcheck --error-exitcode=1
 
 - id: docker-clang-format
-  name: formatter for C/C++ code
+  name: clang-format
   description: Run clang-format against C/C++ header and source files in Docker container
   language: docker_image
   files: \.(h\+\+|h|hh|hxx|hpp|cuh|c|cc|cpp|cu|c\+\+|cxx|tpp|txx)$
@@ -29,14 +29,14 @@
   args: ["-style=Google"]
 
 - id: docker-cpplint
-  name: linter for Google C++ Style Guide
+  name: cpplint
   description: Run cpplint against C/C++ header and source files in Docker container
   language: python
   files: \.(h\+\+|h|hh|hxx|hpp|cuh|c|cc|cpp|cu|c\+\+|cxx|tpp|txx)$
   entry: daverona/pre-commit-cpp cpplint
 
 - id: docker-cppcheck
-  name: static analyzer for C/C++ code
+  name: cppcheck
   description: Run cppcheck against C/C++ source files in Docker container
   language: docker_image
   files: \.(c|cc|cpp|cu|c\+\+|cxx|tpp|txx)$
