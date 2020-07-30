@@ -4,7 +4,7 @@
 
 This is a set of C/C++ hooks for [pre-commit framework](https://pre-commit.com/).
 
-* GitLab repository: [https://gitlab.com/daverona/templates/laravel](https://gitlab.com/daverona/templates/laravel)
+* GitLab repository: [https://gitlab.com/daverona/pre-commit-cpp](https://gitlab.com/daverona/pre-commit-cpp)
 * Docker registry: [https://hub.docker.com/r/daverona/pre-commit-cpp](https://hub.docker.com/r/daverona/pre-commit-cpp)
 * Available releases: [https://gitlab.com/daverona/pre-commit-cpp/-/releases](https://gitlab.com/daverona/pre-commit-cpp/-/releases)
 
