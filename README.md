@@ -1,12 +1,12 @@
-# daverona/pre-commit-cpp
+# daverona/pre-commit/cpp
 
-[![pipeline status](https://gitlab.com/daverona//pre-commit-cpp/badges/master/pipeline.svg)](https://gitlab.com/daverona/pre-commit-cpp/-/commits/master)
+[![pipeline status](https://gitlab.com/daverona//pre-commit/cpp/badges/master/pipeline.svg)](https://gitlab.com/daverona/pre-commit/cpp/-/commits/master)
 
 This is a set of C/C++ hooks for [pre-commit framework](https://pre-commit.com/).
 
-* GitLab repository: [https://gitlab.com/daverona/pre-commit-cpp](https://gitlab.com/daverona/pre-commit-cpp)
+* GitLab repository: [https://gitlab.com/daverona/pre-commit/cpp](https://gitlab.com/daverona/pre-commit/cpp)
 * Docker registry: [https://hub.docker.com/r/daverona/pre-commit-cpp](https://hub.docker.com/r/daverona/pre-commit-cpp)
-* Available releases: [https://gitlab.com/daverona/pre-commit-cpp/-/releases](https://gitlab.com/daverona/pre-commit-cpp/-/releases)
+* Available releases: [https://gitlab.com/daverona/pre-commit/cpp/-/releases](https://gitlab.com/daverona/pre-commit/cpp/-/releases)
 
 ## Overview
 
@@ -35,17 +35,16 @@ brew (on macOS) or apt-get (on Ubuntu) to install it. For Windows, please read
 
 ## Hook Installation
 
-To use C/C++ hooks, add the following YAML code block to your
-`.pre-commit-config.yaml`:
+To use C/C++ hooks, add the following code block to your `.pre-commit-config.yaml`:
 
 ```yaml
-- repo: https://gitlab.com/daverona/pre-commit-cpp
+- repo: https://gitlab.com/daverona/pre-commit/cpp
   rev: 0.7.0                 # use the most recent version
   hooks:
-  # Hooks using native executables
-  - id: clang-format         # formatter of C/C++ code based on a style guide
+  # Hooks using native
+  - id: clang-format         # formatter for C/C++ code based on a style guide
   - id: cpplint              # linter (or style-error checker) for Google C++ Style Guide
-  - id: cppcheck             # static analyzer of C/C++ code
+  - id: cppcheck             # static analyzer for C/C++ code
   # Hooks using Docker
   - id: docker-clang-format  # clang-format in Docker container
   - id: docker-cpplint       # cpplint in Docker container
@@ -66,7 +65,7 @@ by default. If you like to use a different style, say
 please add `args` to the hook to override the default style:
 
 ```yaml
-- repo: https://gitlab.com/daverona/pre-commit-cpp
+- repo: https://gitlab.com/daverona/pre-commit/cpp
   rev: 0.7.0               # use the most recent version
   hooks:
   - id: clang-format
