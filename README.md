@@ -39,7 +39,7 @@ To use C/C++ hooks, add the following code block to your `.pre-commit-config.yam
 
 ```yaml
 - repo: https://gitlab.com/daverona/pre-commit/cpp
-  rev: 0.7.0                 # use the most recent version
+  rev: 0.8.0                 # use the most recent version
   hooks:
   # Hooks using native
   - id: clang-format         # formatter for C/C++ code based on a style guide
@@ -66,7 +66,7 @@ please add `args` to the hook to override the default style:
 
 ```yaml
 - repo: https://gitlab.com/daverona/pre-commit/cpp
-  rev: 0.7.0               # use the most recent version
+  rev: 0.8.0               # use the most recent version
   hooks:
   - id: clang-format
     args: ["-style=LLVM"]  # use LLVM Coding Standards
