@@ -1,78 +1,46 @@
+# pre-commit-cpp
+
+This repo is derived from the excellent pre-commit hook from https://gitlab.com/daverona/pre-commit/cpp.
+That setup does not permit custom style files to `clang-format`, and so this modified repo exists.
+The `-style=Google` flag to `clang-format` is removed, and should be specified in `.pre-commit-config.yaml`
+under args as either `-style=STYLENAME`, or `-style=file:filename` for a style file. See instructions
+[here](https://clang.llvm.org/docs/ClangFormat.html) for generating style files.
+
+The content below is the README from the original repo, with pruned down content to reflect
+the limited feature set of this pseudo-fork.
+
 # daverona/pre-commit/cpp
 
-[![pipeline status](https://gitlab.com/daverona//pre-commit/cpp/badges/master/pipeline.svg)](https://gitlab.com/daverona/pre-commit/cpp/-/commits/master)
+This is a C/C++ hook for [pre-commit framework](https://pre-commit.com/).
 
-This is a set of C/C++ hooks for [pre-commit framework](https://pre-commit.com/).
-
-* GitLab repository: [https://gitlab.com/daverona/pre-commit/cpp](https://gitlab.com/daverona/pre-commit/cpp)
-* Docker registry: [https://hub.docker.com/r/daverona/pre-commit-cpp](https://hub.docker.com/r/daverona/pre-commit-cpp)
-* Available releases: [https://gitlab.com/daverona/pre-commit/cpp/-/releases](https://gitlab.com/daverona/pre-commit/cpp/-/releases)
+* GitHub repository: [https://github.com/lightning-auriga/pre-commit-cpp](https://github.com/lightning-auriga/pre-commit-cpp)
+* Original GitLab repository: [https://gitlab.com/daverona/pre-commit/cpp](https://gitlab.com/daverona/pre-commit/cpp)
 
 ## Overview
 
-C/C++ hooks provided are:
+C/C++ hook provided is:
 
 * [clang-format](https://clang.llvm.org): formatter of C/C++ code based on a
-style guide
-* [cpplint](https://github.com/cpplint/cpplint): linter
-(or style-error detector) for
-[Google C++ Style Guide](http://google.github.io/styleguide/cppguide.html)
-* [cppcheck](http://cppcheck.sourceforge.net/): static analyzer of C/C++ code
-* docker-clang-format: docker-version clang-format hook
-* docker-cpplint: docker-version cpplint hook
-* docker-clang-format: docker-version clang-format hook
+style guide specified in `.pre-commit-config.yaml`
 
 ## Hook Prerequisites
-
-> If you use Docker, don't need to install anything and skip this section.
 
 * clang-format hook requires `clang-format` executable. Use 
 brew (on macOS) or apt-get (on Ubuntu) to install it. For Windows, please read
 [http://releases.llvm.org/download.html](http://releases.llvm.org/download.html).
-* cppcheck hook requires `cppcheck` executable. Use brew 
-(on macOS) or apt-get (on Ubuntu) to install it. For Windows, please read
-[http://cppcheck.sourceforge.net/#download](http://cppcheck.sourceforge.net/#download).
 
 ## Hook Installation
 
 To use C/C++ hooks, add the following code block to your `.pre-commit-config.yaml`:
 
 ```yaml
-- repo: https://gitlab.com/daverona/pre-commit/cpp
-  rev: 0.8.0                 # use the most recent version
+- repo: https://github.com/lightning-auriga/pre-commit-cpp
+  rev: 1.0.0                 # use the most recent version
   hooks:
   # Hooks using native
   - id: clang-format         # formatter for C/C++ code based on a style guide
-  - id: cpplint              # linter (or style-error checker) for Google C++ Style Guide
-  - id: cppcheck             # static analyzer for C/C++ code
-  # Hooks using Docker
-  - id: docker-clang-format  # clang-format in Docker container
-  - id: docker-cpplint       # cpplint in Docker container
-  - id: docker-cppcheck      # cppcheck in Docker container
+    args: "-style=Google"    # replace this with your style of choice, or file:stylefile
 ```
-
-> You don't need to use non-docker version hook and its corresponding docker version at the same time.
-> For instance, if you use `docker-clang-format` hook, `clang-format` hook is not required (and `clang-format` executable is not required to be installed).
-
-## Hook Configuration
-
-### clang-format
-
-clang-format hook uses Google style (as described in 
-[Google C++ Style Guide](http://google.github.io/styleguide/cppguide.html)) 
-by default. If you like to use a different style, say
-[LLVM Coding Standards](http://llvm.org/docs/CodingStandards.html),
-please add `args` to the hook to override the default style:
-
-```yaml
-- repo: https://gitlab.com/daverona/pre-commit/cpp
-  rev: 0.8.0               # use the most recent version
-  hooks:
-  - id: clang-format
-    args: ["-style=LLVM"]  # use LLVM Coding Standards
-```
-
-Available styles are `LLVM`, `Google`, `Chromium`, `Mozilla`, and `WebKit`.
 
 ## References
 
